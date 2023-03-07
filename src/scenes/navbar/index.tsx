@@ -13,7 +13,7 @@ type Props = {
 };
 
 const Navbar = ({ selectedPage, setSelectedPage, isTopOfPage }: Props) => {
-  const [isMenuToggled, setIsMenuToggled] = useState<boolean>(true);
+  const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
   const flexBetween = "flex items-center justify-between";
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   const navbarBackground = isTopOfPage ? "" : "bg-primary-100 drop-shadow"
@@ -35,7 +35,7 @@ const Navbar = ({ selectedPage, setSelectedPage, isTopOfPage }: Props) => {
                     setSelectedPage={setSelectedPage}
                   />
                   <Link
-                    page="Benefitssssss"
+                    page="Benefits"
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
                   />

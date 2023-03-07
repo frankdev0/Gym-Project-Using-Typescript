@@ -2,8 +2,11 @@ import { useState } from "react"
 import Navbar from "@/scenes/navbar"
 import {SelectedPage} from "@/shared/types"
 import { useEffect } from "react"
-import Home from "./scenes/navbar/home"
 import Benefits from "./benefits"
+import Home from "./scenes/home"
+import OurClasses from "@/scenes/ourclasses"
+import ContactUs from "./scenes/contactUs"
+import Footer from "./scenes/footer"
 
 
 function App() {
@@ -17,11 +20,12 @@ function App() {
       if (window.scrollY === 0 ) {
         setIsTopOfPage(true)
         setSelectedPage(SelectedPage.Home)
+      }
          if (window.scrollY !== 0) setIsTopOfPage(false)
       }
      window.addEventListener("scroll", handleScroll)
    return () =>  window.removeEventListener("scroll", handleScroll)
-    }
+    
   }, [])
 
 
@@ -30,6 +34,9 @@ function App() {
     <Navbar isTopOfPage={isTopOfPage} selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
     <Home setSelectedPage={setSelectedPage}/>
     <Benefits setSelectedPage={setSelectedPage}/>
+    <OurClasses setSelectedPage={setSelectedPage}/>
+    <ContactUs setSelectedPage={setSelectedPage}/>
+    <Footer />
     </div>
   )
 }
